@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="seasonality_js.js"></script>
+    <script type="module" src="ingredients.js"></script>
+    <link rel="stylesheet" href="seasonality_js.css">
+    <title>Seasonality</title>
+</head>
+
+<h1 class="header">Seasonality</h1>
+<h3 class="header">Find ingredients in season!</h3>
+
+<body>
+    <form id="myForm">
+        <label>
+          Select a location:
+          <select id="location">
+            <option value="Oregon">Oregon</option>
+          </select>
+        </label>
+        <br />
+        <br />
+        <label>
+          Select an ingredient to check if it's in season:
+          <select type="text" id="ingredients" onChange="changeSelected()">
+            <option value="Apple">Apple</option>
+            <option value="Basil">Basil</option>
+            <option value="Carrot">Carrot</option>
+            <option value="Celery">Celery</option>
+            <option value="Fennel">Fennel</option>
+            <option value="Garlic">Garlic</option>
+            <option value="Kale">Kale</option>
+            <option value="Leek">Leek</option>
+            <option value="Mushroom">Mushroom</option>
+            <option value="Pumpkin">Pumpkin</option>
+            <option value="Spinach">Spinach</option>
+            <option value="Watermelon">Watermelon</option>
+            <option value="Zucchini">Zucchini</option>
+          </select>
+        </label>
+        <div class="tooltip">
+            <input id="checkSeason" type="button" value="Check" />
+            <span class="tooltiptext">Click to check if in season!</span>
+        </div>
+        <div class="tooltip">
+            <button type="button" onClick="addToList()" id="btnList">+</button>
+            <span class="tooltiptext">Click to add to your list!</span>
+        </div>
+        <div class="tooltip">
+            <button type="button" onClick="showChart()" id="btnChart">Show All</button>
+            <span class="tooltiptext">Show chart of everything in season</span>
+        </div>
+      </form>
+
+        <img id="chart" src="" alt="">
+      
+    <div id="season"></div>
+    <div class="tooltip">
+        <button type="button" onClick="displayImg()" id="btnID">Show</button>
+        <span class="tooltiptext">Hover over image to see description!</span>
+    </div>
+    <div class="tooltip">
+        <button type="button" onClick="hideImg()" id="btnID2">Hide</button>
+        <span class="tooltiptext">Hide any images on screen</span>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+        <img id="image" src=""/> 
+        <div id="text" class="overlay"></div>
+    </div>
+
+    <div class="containerList">
+        <h3 class="yourList">Your List
+        <div class="tooltip">
+             <button id="btnDelete">x</button>
+            <span class="tooltiptext">Remove ALL items from list</span>
+        </div>
+        </h3>
+        <ul id="yourList">
+        </ul>
+    </div>
+      
+</body>
+
+</html>
